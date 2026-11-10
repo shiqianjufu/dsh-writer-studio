@@ -1,0 +1,12 @@
+# writer-studio bundle patch。
+# entry id 必须与 lib/index.js 导出的 cordis name 一致。
+- insert:
+    - id: '写作台'
+      name: 'dsh-writer-studio'
+      config: {}
+# AI 生成默认跟随「当前对话」的 provider/model；只有想强制换模型时才改上面的 config：
+# config:
+#   ai:
+#     provider: deepseek
+#     model: deepseek-chat
+#     reasoningEffort: low   # 可选
