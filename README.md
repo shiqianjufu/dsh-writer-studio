@@ -37,6 +37,10 @@ node install.mjs
 
 卸载：从 profile 的 `package.json` 里删掉 `dsh-writer-studio` 依赖与 bundles 条目，删除 `node_modules/dsh-writer-studio` 联接和 `~/.dsh/plugins/dsh-writer-studio`，重启。作品数据在 `~/.dsh/writer-studio`，删不删由你。
 
+## 安全
+
+`/api/writer-studio/*` 的每条请求都由宿主的 `connection.requestRejection()` 统一认证：Host、Origin 与浏览器凭据任一不通过即返回 401/403，认证服务不可用时路由不注册。
+
 ## 使用
 
 1. 打开右侧栏「写作台」，新建作品，**先定每章字数区间**。
